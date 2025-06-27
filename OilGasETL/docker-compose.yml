@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: oilgas-sqlserver
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=YourStrong@Passw0rd
+      - MSSQL_PID=Express
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    networks:
+      - oilgas-network
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P YourStrong@Passw0rd -Q 'SELECT 1'"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+
+  oilgas-etl:
+    build: .
+    container_name: oilgas-etl-pipeline
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+    environment:
+      - DOTNET_RUNNING_IN_CONTAINER=true
+    volumes:
+      - ./data/input:/app/data/input:ro
+      - ./data/processed:/app/data/processed
+      - ./data/error:/app/data/error
+    networks:
+      - oilgas-network
+    profiles:
+      - with-database
+
+  oilgas-etl-standalone:
+    build: .
+    container_name: oilgas-etl-standalone
+    environment:
+      - DOTNET_RUNNING_IN_CONTAINER=true
+    volumes:
+      - ./data/input:/app/data/input:ro
+      - ./data/processed:/app/data/processed
+      - ./data/error:/app/data/error
+    networks:
+      - oilgas-network
+
+volumes:
+  sqlserver_data:
+
+networks:
+  oilgas-network:
+    driver: bridge 

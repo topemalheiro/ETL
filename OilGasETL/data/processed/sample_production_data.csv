@@ -1,0 +1,25 @@
+WellId,ProductionDate,OilProduction,GasProduction,WaterProduction,WellheadPressure,Temperature,Status,Comments
+WELL-001,2024-01-01,245.5,1250.0,45.2,85.5,95.2,Active,Normal production
+WELL-001,2024-01-02,248.1,1275.5,47.8,84.2,94.8,Active,Slight pressure drop
+WELL-001,2024-01-03,251.2,1295.2,49.1,86.1,96.1,Active,Production stable
+WELL-002,2024-01-01,189.7,890.5,62.4,78.9,92.5,Active,New well online
+WELL-002,2024-01-02,195.3,925.8,58.9,79.5,93.1,Active,Production increasing
+WELL-002,2024-01-03,201.8,945.2,55.7,80.2,93.8,Active,Optimization working
+WELL-003,2024-01-01,156.4,750.3,89.7,65.8,88.9,Maintenance,Planned workover
+WELL-003,2024-01-02,0.0,0.0,0.0,0.0,85.2,Shutdown,Equipment replacement
+WELL-003,2024-01-03,165.9,785.6,95.2,68.4,89.7,Active,Back online
+WELL-004,2024-01-01,298.6,1450.8,35.1,92.3,97.8,Active,High performer
+WELL-004,2024-01-02,301.2,1475.9,36.8,91.8,98.2,Active,Consistent production
+WELL-004,2024-01-03,295.7,1425.6,38.2,90.5,97.5,Active,Minor decline
+WELL-005,2024-01-01,78.9,425.6,125.8,45.2,85.6,Active,High water cut
+WELL-005,2024-01-02,82.4,445.2,118.9,46.8,86.1,Active,Water treatment effective
+WELL-005,2024-01-03,85.7,465.8,112.3,48.1,86.8,Active,Production improving
+WELL-006,2024-01-01,0.0,0.0,0.0,0.0,82.1,Shutdown,Seasonal maintenance
+WELL-006,2024-01-02,0.0,0.0,0.0,0.0,81.8,Shutdown,Maintenance continuing
+WELL-006,2024-01-03,0.0,0.0,0.0,0.0,82.5,Shutdown,Ready for restart
+WELL-007,2024-01-01,225.8,1125.4,72.6,88.7,94.3,Active,Baseline production
+WELL-007,2024-01-02,230.4,1145.8,69.8,89.2,94.8,Active,Slight improvement
+WELL-007,2024-01-03,228.9,1135.2,71.4,88.9,94.5,Active,Production stable
+WELL-008,2024-01-01,445.2,2250.6,15.8,98.5,102.3,Active,Top producer
+WELL-008,2024-01-02,448.7,2275.9,16.2,97.8,101.9,Active,Excellent performance
+WELL-008,2024-01-03,452.1,2295.4,15.4,99.1,102.7,Active,Record production 
